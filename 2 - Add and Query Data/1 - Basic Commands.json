@@ -1,0 +1,19 @@
+{
+  "id": "8b3ea1",
+  "fileName": "1 - Basic Commands.json",
+  "name": "1 - Basic Commands",
+  "cells": [
+    {
+      "id": "1695953247880",
+      "type": "markdown",
+      "content": "| Data Structure | | | |\n| - | - | - | - |\n| Plain String or Number | SET | GET | APPEND |\n| List of Strings | LINDEX | LLEN | LINSERT |\n| Collection of Key-Value Pairs | HGET | HSET | HDEL |\n| Set of Strings | SADD | SCARD | SDIFF |\n| Sorted Set of Strings | ZADD | ZDIFF | ZCOUNT |"
+    },
+    {
+      "id": "1695952852912",
+      "type": "redis",
+      "content": "SET message 'Hi there!'"
+    },
+    { "id": "1695952857700", "type": "redis", "content": "GET message" }
+  ],
+  "createdAt": "2023-09-29T02:00:36.180Z"
+}
