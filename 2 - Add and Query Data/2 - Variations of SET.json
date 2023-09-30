@@ -1,0 +1,33 @@
+{
+  "id": "2bb196",
+  "fileName": "2 - Variations of SET.json",
+  "name": "2 - Variations of SET",
+  "cells": [
+    {
+      "id": "29100f",
+      "type": "redis",
+      "content": "SET color 'red'\nSET color 'green' GET"
+    },
+    {
+      "id": "1696079972922",
+      "type": "redis",
+      "content": "SET color 'yellow' XX\nGET color"
+    },
+    {
+      "id": "1696080067951",
+      "type": "redis",
+      "content": "SET color 'blue' XX"
+    },
+    {
+      "id": "1696080029915",
+      "type": "redis",
+      "content": "SET color 'blue' NX\nSETNX color 'blue'"
+    },
+    {
+      "id": "1696080903698",
+      "type": "redis",
+      "content": "SET color 'red' EX 2\nSETEX color 2 'red'\nGET color"
+    }
+  ],
+  "createdAt": "2023-09-30T13:18:32.041Z"
+}
