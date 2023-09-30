@@ -1,0 +1,64 @@
+{
+  "id": "08689d",
+  "fileName": "4 - String ranges.json",
+  "name": "4 - String ranges",
+  "cells": [
+    {
+      "id": "b9aeb6",
+      "type": "redis",
+      "content": "SETNX car 'audi' \nGET car"
+    },
+    { "id": "1696081694525", "type": "redis", "content": "GETRANGE car 0 1 " },
+    {
+      "id": "1696081708079",
+      "type": "redis",
+      "content": "SETRANGE car 2 'fau'\nGET car"
+    },
+    {
+      "id": "1696082498787",
+      "type": "markdown",
+      "content": "## Example use of those commands\n\nEncode the options in tables."
+    },
+    {
+      "id": "1696082388078",
+      "type": "markdown",
+      "content": "| key | material | color |\n| - | - | - |\n| item1 | wood | red |\n| item2 | metal | green |\n| item3 | plastic | blue |"
+    },
+    {
+      "id": "1696082647784",
+      "type": "markdown",
+      "content": "| material | encoded |\n| - | - | \n| wood | w |\n| metal | m |\n| plastic | p |"
+    },
+    {
+      "id": "1696082642142",
+      "type": "markdown",
+      "content": "| color | encoded |\n| - | - | \n| red | r |\n| green | g |\n| blue | b |"
+    },
+    {
+      "id": "1696082669275",
+      "type": "markdown",
+      "content": "| key | material | color |\n| - | - | - |\n| item1 | w | r |\n| item2 | m | g |\n| item3 | p | b |\n\n| key | properties |\n| - | - |\n| item1 | wr |\n| item2 | mg |\n| item3 | pb |"
+    },
+    {
+      "id": "1696082497428",
+      "type": "redis",
+      "content": "// Create several items\nMSET item1 'wr' item2 'mg' item3 'pb'"
+    },
+    {
+      "id": "1696082480043",
+      "type": "redis",
+      "content": "// Fetch one to three properties\nGETRANGE item1 0 0"
+    },
+    {
+      "id": "1696082844566",
+      "type": "redis",
+      "content": "// Update one to three properties\nSETRANGE item2 1 'r'\nGET item2"
+    },
+    {
+      "id": "1696082894245",
+      "type": "redis",
+      "content": "// Fetch all properties related to multiple items\nMGET item1 item2 item3"
+    }
+  ],
+  "createdAt": "2023-09-30T13:47:04.164Z"
+}
