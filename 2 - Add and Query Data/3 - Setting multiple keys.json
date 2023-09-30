@@ -1,0 +1,19 @@
+{
+  "id": "e48ee6",
+  "fileName": "3 - Setting multiple keys.json",
+  "name": "3 - Setting multiple keys",
+  "cells": [
+    {
+      "id": "29100f",
+      "type": "redis",
+      "content": "MSET car 'audi' model 'a5'\nGET car\nGet model"
+    },
+    {
+      "id": "1696080762623",
+      "type": "redis",
+      "content": "MSETNX car 'toyota' model 'corolla'\nGET car\nGet model"
+    },
+    { "id": "1696081235518", "type": "redis", "content": "MGET car model" }
+  ],
+  "createdAt": "2023-09-30T13:18:32.041Z"
+}
