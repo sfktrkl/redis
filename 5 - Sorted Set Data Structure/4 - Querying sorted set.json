@@ -1,0 +1,38 @@
+{
+  "id": "fc7c35",
+  "fileName": "4 - Querying sorted set.json",
+  "name": "4 - Querying sorted set",
+  "cells": [
+    {
+      "id": "989865",
+      "type": "redis",
+      "content": "DEL products\nZADD products 55 cpu\nZADD products 10 keyboard\nZADD products 45 mouse"
+    },
+    {
+      "id": "1696199832063",
+      "type": "redis",
+      "content": "ZRANGE products 1 2"
+    },
+    {
+      "id": "1696199924777",
+      "type": "redis",
+      "content": "ZRANGE products 1 2 REV"
+    },
+    {
+      "id": "1696199840886",
+      "type": "redis",
+      "content": "ZRANGE products 1 2 WITHSCORES"
+    },
+    {
+      "id": "1696199846052",
+      "type": "redis",
+      "content": "ZRANGE products 0 50 BYSCORE"
+    },
+    {
+      "id": "1696199894541",
+      "type": "redis",
+      "content": "ZRANGE products 0 55 BYSCORE LIMIT 1 2"
+    }
+  ],
+  "createdAt": "2023-10-01T22:36:56.823Z"
+}
