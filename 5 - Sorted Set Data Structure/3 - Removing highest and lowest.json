@@ -1,0 +1,15 @@
+{
+  "id": "c72ef3",
+  "fileName": "3 - Removing highest and lowest.json",
+  "name": "3 - Removing highest and lowest",
+  "cells": [
+    {
+      "id": "95c971",
+      "type": "redis",
+      "content": "DEL products\nZADD products 55 cpu\nZADD products 10 keyboard\nZADD products 45 mouse"
+    },
+    { "id": "1696199536798", "type": "redis", "content": "ZPOPMIN products" },
+    { "id": "1696199554431", "type": "redis", "content": "ZPOPMAX products" }
+  ],
+  "createdAt": "2023-10-01T22:32:00.682Z"
+}
