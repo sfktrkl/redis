@@ -1,0 +1,11 @@
+{
+  "id": "7a4895",
+  "fileName": "1 - Basics of Sets.json",
+  "name": "1 - Basics of Sets",
+  "cells": [
+    { "id": "763555", "type": "redis", "content": "SADD colors 'red'" },
+    { "id": "1696191122049", "type": "redis", "content": "SADD colors 'blue'" },
+    { "id": "1696191126021", "type": "redis", "content": "SMEMBERS colors" }
+  ],
+  "createdAt": "2023-10-01T20:11:45.693Z"
+}
