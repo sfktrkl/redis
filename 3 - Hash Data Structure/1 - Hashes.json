@@ -1,0 +1,29 @@
+{
+  "id": "332eeb",
+  "fileName": "1 - Hashes.json",
+  "name": "1 - Hashes",
+  "cells": [
+    {
+      "id": "9062a8",
+      "type": "redis",
+      "content": "HSET company name 'Concrete Co' age 1915"
+    },
+    {
+      "id": "1696129539350",
+      "type": "redis",
+      "content": "// Only performed an update for the field\nHSET company industry 'materials'"
+    },
+    { "id": "1696129468775", "type": "redis", "content": "HGET company name" },
+    { "id": "1696129491480", "type": "redis", "content": "HGETALL company" },
+    { "id": "1696130178908", "type": "redis", "content": "HKEYS company" },
+    { "id": "1696130191473", "type": "redis", "content": "HVALS company" },
+    { "id": "1696129795771", "type": "redis", "content": "HDEL company age" },
+    {
+      "id": "1696129744535",
+      "type": "redis",
+      "content": "HEXISTS company age"
+    },
+    { "id": "1696129764649", "type": "redis", "content": "DEL company" }
+  ],
+  "createdAt": "2023-10-01T03:02:46.882Z"
+}
