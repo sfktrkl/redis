@@ -1,0 +1,39 @@
+{
+  "id": "192565",
+  "fileName": "2 - Numbers in hashes.json",
+  "name": "2 - Numbers in hashes",
+  "cells": [
+    {
+      "id": "9bdafa",
+      "type": "redis",
+      "content": "DEL company\nHSET company name 'Company co' age 1915\nHGETALL company"
+    },
+    {
+      "id": "1696129912003",
+      "type": "redis",
+      "content": "HINCRBY company age 10"
+    },
+    {
+      "id": "1696129954507",
+      "type": "redis",
+      "content": "HINCRBY company age -10"
+    },
+    {
+      "id": "1696129929790",
+      "type": "redis",
+      "content": "HINCRBY company revenue 200"
+    },
+    { "id": "1696130042368", "type": "redis", "content": "HGETALL company" },
+    {
+      "id": "1696129921574",
+      "type": "redis",
+      "content": "HINCRBYFLOAT company revenue 150.50"
+    },
+    {
+      "id": "1696130077565",
+      "type": "redis",
+      "content": "HSTRLEN company name"
+    }
+  ],
+  "createdAt": "2023-10-01T03:11:29.687Z"
+}
