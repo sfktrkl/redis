@@ -1,0 +1,29 @@
+{
+  "id": "211715",
+  "fileName": "2 - Finding range of scores.json",
+  "name": "2 - Finding range of scores",
+  "cells": [
+    {
+      "id": "640db3",
+      "type": "redis",
+      "content": "DEL products\nZADD products 55 cpu\nZADD products 10 keyboard\nZADD products 45 mouse"
+    },
+    { "id": "1696199363176", "type": "redis", "content": "ZCARD products" },
+    {
+      "id": "1696199360318",
+      "type": "redis",
+      "content": "ZCOUNT products 0 50"
+    },
+    {
+      "id": "1696199380347",
+      "type": "redis",
+      "content": "ZCOUNT products 0 (55"
+    },
+    {
+      "id": "1696199394113",
+      "type": "redis",
+      "content": "ZCOUNT products 0 +inf"
+    }
+  ],
+  "createdAt": "2023-10-01T22:28:50.383Z"
+}
