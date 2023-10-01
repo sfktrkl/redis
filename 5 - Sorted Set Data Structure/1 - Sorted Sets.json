@@ -1,0 +1,23 @@
+{
+  "id": "871b49",
+  "fileName": "1 - Sorted Sets.json",
+  "name": "1 - Sorted Sets",
+  "cells": [
+    {
+      "id": "78e5c6",
+      "type": "redis",
+      "content": "ZADD products 45 mouse\nZSCORE products mouse"
+    },
+    {
+      "id": "1696199648912",
+      "type": "redis",
+      "content": "ZINCRBY products 2 mouse\nZSCORE products mouse"
+    },
+    {
+      "id": "1696198945600",
+      "type": "redis",
+      "content": "ZREM products mouse\nZSCORE products mouse"
+    }
+  ],
+  "createdAt": "2023-10-01T22:21:19.338Z"
+}
