@@ -1,0 +1,39 @@
+{
+  "id": "7e7687",
+  "fileName": "3 - Checking element and scanning.json",
+  "name": "3 - Checking element and scanning",
+  "cells": [
+    {
+      "id": "026f1c",
+      "type": "redis",
+      "content": "SADD colors:1 red green blue orange"
+    },
+    {
+      "id": "1696192622592",
+      "type": "redis",
+      "content": "SISMEMBER colors:1 red"
+    },
+    {
+      "id": "1696192629938",
+      "type": "redis",
+      "content": "SMISMEMBER colors:1 red purple"
+    },
+    { "id": "1696192650420", "type": "redis", "content": "SCARD colors:1" },
+    {
+      "id": "1696192666508",
+      "type": "redis",
+      "content": "SREM colors:1 red\nSMEMBERS colors:1"
+    },
+    {
+      "id": "1696192699922",
+      "type": "redis",
+      "content": "SSCAN colors:1 0 COUNT 2"
+    },
+    {
+      "id": "1696192856548",
+      "type": "redis",
+      "content": "SSCAN colors:1 2 COUNT 2"
+    }
+  ],
+  "createdAt": "2023-10-01T20:36:37.378Z"
+}
