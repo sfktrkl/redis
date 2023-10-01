@@ -1,0 +1,33 @@
+{
+  "id": "07fbee",
+  "fileName": "2 - Union, intersection, and difference.json",
+  "name": "2 - Union, intersection, and difference",
+  "cells": [
+    {
+      "id": "e87481",
+      "type": "redis",
+      "content": "SADD colors:1 red green blue\nSADD colors:2 red purple blue\nSADD colors:3 green purple orange"
+    },
+    {
+      "id": "1696191367552",
+      "type": "redis",
+      "content": "SUNION colors:1 colors:2 colors:3 "
+    },
+    {
+      "id": "1696191401356",
+      "type": "redis",
+      "content": "SINTER colors:1 colors:2 colors:3"
+    },
+    {
+      "id": "1696191459466",
+      "type": "redis",
+      "content": "SDIFF colors:1 colors:3"
+    },
+    {
+      "id": "1696191392093",
+      "type": "redis",
+      "content": "// Store the results for further use it later\nSINTERSTORE colors:results colors:1 colors:2\nSMEMBERS colors:results"
+    }
+  ],
+  "createdAt": "2023-10-01T20:15:06.057Z"
+}
