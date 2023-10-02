@@ -1,0 +1,28 @@
+{
+  "id": "9d87ac",
+  "fileName": "2 - Joining data with sort.json",
+  "name": "2 - Joining data with sort",
+  "cells": [
+    {
+      "id": "1696287743295",
+      "type": "redis",
+      "content": "ZADD books:likes 999 good\nZADD books:likes 0 bad\nZADD books:likes 40 ok"
+    },
+    {
+      "id": "1b2da0",
+      "type": "redis",
+      "content": "HSET books:good title 'Good Book' year 1950\nHSET books:bad title 'Bad Book' year 1930\nHSET books:ok title 'OK Book' year 1940"
+    },
+    {
+      "id": "1696287731146",
+      "type": "redis",
+      "content": "SORT books:likes BY books:*->year"
+    },
+    {
+      "id": "1696287756435",
+      "type": "redis",
+      "content": "SORT books:likes BY nosort DESC\n    GET #\n    GET books:*->title\n    GET books:*->year"
+    }
+  ],
+  "createdAt": "2023-10-02T23:01:16.513Z"
+}
