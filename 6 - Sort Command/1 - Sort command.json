@@ -1,0 +1,23 @@
+{
+  "id": "651e56",
+  "fileName": "1 - Sort command.json",
+  "name": "1 - Sort command",
+  "cells": [
+    {
+      "id": "e5a0cf",
+      "type": "redis",
+      "content": "ZADD books:likes 999 good\nZADD books:likes 0 bad\nZADD books:likes 40 ok"
+    },
+    {
+      "id": "1696287672743",
+      "type": "redis",
+      "content": "SORT books:likes ALPHA"
+    },
+    {
+      "id": "1696287713844",
+      "type": "redis",
+      "content": "SORT books:likes LIMIT 1 2 ALPHA"
+    }
+  ],
+  "createdAt": "2023-10-02T23:00:32.235Z"
+}
