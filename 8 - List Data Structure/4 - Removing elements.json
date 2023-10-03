@@ -1,0 +1,28 @@
+{
+  "id": "55d0cf",
+  "fileName": "4 - Removing elements.json",
+  "name": "4 - Removing elements",
+  "cells": [
+    {
+      "id": "0338b9",
+      "type": "redis",
+      "content": "DEL temperatures\nRPUSH temperatures 25\nRPUSH temperatures 30\nRPUSH temperatures 25\nRPUSH temperatures 30\nRPUSH temperatures 25"
+    },
+    {
+      "id": "1696295177503",
+      "type": "redis",
+      "content": "LINSERT temperatures BEFORE 30 15\nLRANGE temperatures 0 -1"
+    },
+    {
+      "id": "1696295199126",
+      "type": "redis",
+      "content": "LREM temperatures 0 25\nLRANGE temperatures 0 -1"
+    },
+    {
+      "id": "1696295304764",
+      "type": "redis",
+      "content": "LREM temperatures 1 30\nLRANGE temperatures 0 -1"
+    }
+  ],
+  "createdAt": "2023-10-03T01:06:03.479Z"
+}
