@@ -1,0 +1,48 @@
+{
+  "id": "a4d6cc",
+  "fileName": "2 - Ranges and searches in a List.json",
+  "name": "2 - Ranges and searches in a List",
+  "cells": [
+    {
+      "id": "3980f5",
+      "type": "redis",
+      "content": "DEL temperatures\nRPUSH temperatures 25\nRPUSH temperatures 27\nRPUSH temperatures 25\nRPUSH temperatures 30\nRPUSH temperatures 24"
+    },
+    {
+      "id": "1696294570220",
+      "type": "redis",
+      "content": "LRANGE temperatures 0 2"
+    },
+    {
+      "id": "1696294585951",
+      "type": "redis",
+      "content": "LRANGE temperatures 0 -2"
+    },
+    {
+      "id": "1696294599996",
+      "type": "redis",
+      "content": "LPOS temperatures 27"
+    },
+    {
+      "id": "1696294629181",
+      "type": "redis",
+      "content": "LPOS temperatures 55"
+    },
+    {
+      "id": "1696294641267",
+      "type": "redis",
+      "content": "LPOS temperatures 25 RANK 2"
+    },
+    {
+      "id": "1696294658314",
+      "type": "redis",
+      "content": "LPOS temperatures 25 COUNT 2 "
+    },
+    {
+      "id": "1696294671311",
+      "type": "redis",
+      "content": "LPOS temperatures 25 COUNT 2 MAXLEN 2"
+    }
+  ],
+  "createdAt": "2023-10-03T00:55:21.661Z"
+}
