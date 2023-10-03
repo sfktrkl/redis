@@ -1,0 +1,33 @@
+{
+  "id": "2a3b8a",
+  "fileName": "3 - Trimming Lists.json",
+  "name": "3 - Trimming Lists",
+  "cells": [
+    {
+      "id": "8a79d5",
+      "type": "redis",
+      "content": "DEL temperatures\nRPUSH temperatures 25\nRPUSH temperatures 27\nRPUSH temperatures 25\nRPUSH temperatures 30\nRPUSH temperatures 24"
+    },
+    {
+      "id": "1696294872805",
+      "type": "redis",
+      "content": "LPOP temperatures\nLINDEX temperatures 0"
+    },
+    {
+      "id": "1696294898564",
+      "type": "redis",
+      "content": "RPOP temperatures 2\nLINDEX temperatures -1"
+    },
+    {
+      "id": "1696294922268",
+      "type": "redis",
+      "content": "LSET temperatures 0 55\nLINDEX temperatures 0"
+    },
+    {
+      "id": "1696295066644",
+      "type": "redis",
+      "content": "LTRIM temperatures 0 1\nLLEN temperatures"
+    }
+  ],
+  "createdAt": "2023-10-03T01:00:57.778Z"
+}
