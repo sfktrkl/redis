@@ -1,0 +1,34 @@
+{
+  "id": "4cef4f",
+  "fileName": "1 - Reading and writing data to a List.json",
+  "name": "1 - Reading and writing data to a List",
+  "cells": [
+    {
+      "id": "61f296",
+      "type": "redis",
+      "content": "DEL temperatures\nLPUSH temperatures 25"
+    },
+    {
+      "id": "1696291199052",
+      "type": "redis",
+      "content": "RPUSH temperatures 27"
+    },
+    { "id": "1696291203350", "type": "redis", "content": "LLEN temperatures" },
+    {
+      "id": "1696291216278",
+      "type": "redis",
+      "content": "LINDEX temperatures 0"
+    },
+    {
+      "id": "1696291229357",
+      "type": "redis",
+      "content": "LINDEX temperatures -1"
+    },
+    {
+      "id": "1696291232390",
+      "type": "redis",
+      "content": "LINDEX temperatures -2"
+    }
+  ],
+  "createdAt": "2023-10-02T23:59:25.922Z"
+}
