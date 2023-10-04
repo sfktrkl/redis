@@ -1,0 +1,16 @@
+{
+  "id": "0fd402",
+  "fileName": "2 - Watching a key.json",
+  "name": "2 - Watching a key",
+  "cells": [
+    { "id": "1696388541407", "type": "redis", "content": "WATCH color" },
+    { "id": "1696388554878", "type": "redis", "content": "SET color green" },
+    {
+      "id": "1696388566445",
+      "type": "redis",
+      "content": "MULTI\nSET color red\nSET color blue\nEXEC"
+    },
+    { "id": "1696388608963", "type": "redis", "content": "GET color" }
+  ],
+  "createdAt": "2023-10-04T03:02:08.123Z"
+}
