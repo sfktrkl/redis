@@ -1,0 +1,24 @@
+{
+  "id": "dc70a2",
+  "fileName": "5 - Providing arguments.json",
+  "name": "5 - Providing arguments and key lists",
+  "cells": [
+    {
+      "id": "016390",
+      "type": "redis",
+      "content": "EVAL 'return 1 + ARGV[1]' 0 100"
+    },
+    {
+      "id": "1696467509704",
+      "type": "redis",
+      "content": "EVAL 'return 1 + tonumber(ARGV[1]) + tonumber(ARGV[2])' 0 2 3"
+    },
+    { "id": "1696467818736", "type": "redis", "content": "SET color red" },
+    {
+      "id": "1696467835957",
+      "type": "redis",
+      "content": "EVAL 'return redis.call(\"GET\", KEYS[1])..ARGV[1]' 1 color '1'"
+    }
+  ],
+  "createdAt": "2023-10-05T00:55:27.080Z"
+}
