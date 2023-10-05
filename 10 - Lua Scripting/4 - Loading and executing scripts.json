@@ -1,0 +1,23 @@
+{
+  "id": "e40cce",
+  "fileName": "4 - Loading and executing scripts.json",
+  "name": "4 - Loading and executing scripts",
+  "cells": [
+    {
+      "id": "1696467274204",
+      "type": "redis",
+      "content": "EVAL 'return 1 + 1' 0"
+    },
+    {
+      "id": "4ca5d0",
+      "type": "redis",
+      "content": "SCRIPT LOAD 'return 1 + 1'"
+    },
+    {
+      "id": "1696467262813",
+      "type": "redis",
+      "content": "EVALSHA c301e0c5bc3538d2bad3fdbf2e281887e643ada4 0"
+    }
+  ],
+  "createdAt": "2023-10-05T00:53:54.265Z"
+}
