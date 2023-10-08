@@ -1,0 +1,33 @@
+{
+  "id": "599678",
+  "fileName": "7 - Understanding queries.json",
+  "name": "7 - Understanding queries",
+  "cells": [
+    {
+      "id": "5682fc",
+      "type": "redis",
+      "content": "HSET cars#a1 name 'fast car' color red year 1950\nHSET cars#b1 name 'just car' color red year 1960\nHSET cars#c1 name 'old car' color blue year 1970\nHSET cars#d1 name 'new car' color blue year 1990\nFT.CREATE idx:cars ON HASH PREFIX 1 cars#\n    SCHEMA name TEXT year NUMERIC color TAG"
+    },
+    {
+      "id": "1696801038680",
+      "type": "redis",
+      "content": "FT.EXPLAINCLI idx:cars 'car'"
+    },
+    {
+      "id": "1696801005201",
+      "type": "redis",
+      "content": "FT.EXPLAINCLI idx:cars 'fast car'"
+    },
+    {
+      "id": "1696801065080",
+      "type": "redis",
+      "content": "FT.EXPLAINCLI idx:cars 'fast -car'"
+    },
+    {
+      "id": "1696801105430",
+      "type": "redis",
+      "content": "FT.EXPLAINCLI idx:cars '@name:(fast) | @year:[1950 1970]'"
+    }
+  ],
+  "createdAt": "2023-10-08T21:36:28.971Z"
+}
