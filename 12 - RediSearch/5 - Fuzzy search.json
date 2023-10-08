@@ -1,0 +1,28 @@
+{
+  "id": "e26081",
+  "fileName": "5 - Fuzzy search.json",
+  "name": "5 - Fuzzy search",
+  "cells": [
+    {
+      "id": "5cce8d",
+      "type": "redis",
+      "content": "HSET cars#a1 name 'fast car' color red year 1950\nHSET cars#b1 name 'just car' color red year 1960\nHSET cars#c1 name 'old car' color blue year 1970\nHSET cars#d1 name 'new car' color blue year 1990\nFT.CREATE idx:cars ON HASH PREFIX 1 cars#\n    SCHEMA name TEXT year NUMERIC color TAG"
+    },
+    {
+      "id": "1696796714948",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(%gast%)'"
+    },
+    {
+      "id": "1696796796989",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(%%gasd%%)'"
+    },
+    {
+      "id": "1696796824838",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(%%%gesd%%%)'"
+    }
+  ],
+  "createdAt": "2023-10-08T20:25:00.292Z"
+}
