@@ -1,0 +1,23 @@
+{
+  "id": "57d238",
+  "fileName": "6 - Prefix search.json",
+  "name": "6 - Prefix search",
+  "cells": [
+    {
+      "id": "682403",
+      "type": "redis",
+      "content": "HSET cars#a1 name 'fast car' color red year 1950\nHSET cars#b1 name 'just car' color red year 1960\nHSET cars#c1 name 'old car' color blue year 1970\nHSET cars#d1 name 'new car' color blue year 1990\nFT.CREATE idx:cars ON HASH PREFIX 1 cars#\n    SCHEMA name TEXT year NUMERIC color TAG"
+    },
+    {
+      "id": "1696796913846",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(fa*)'"
+    },
+    {
+      "id": "1696796923502",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(ol*)'"
+    }
+  ],
+  "createdAt": "2023-10-08T20:28:23.869Z"
+}
