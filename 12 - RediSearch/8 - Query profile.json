@@ -1,0 +1,23 @@
+{
+  "id": "56ad9d",
+  "fileName": "8 - Query profile.json",
+  "name": "8 - Query profile",
+  "cells": [
+    {
+      "id": "41f29e",
+      "type": "redis",
+      "content": "HSET cars#a1 name 'fast car' color red year 1950\nHSET cars#b1 name 'just car' color red year 1960\nHSET cars#c1 name 'old car' color blue year 1970\nHSET cars#d1 name 'new car' color blue year 1990\nFT.CREATE idx:cars ON HASH PREFIX 1 cars#\n    SCHEMA name TEXT year NUMERIC color TAG"
+    },
+    {
+      "id": "1696801171668",
+      "type": "redis",
+      "content": "FT.PROFILE idx:cars SEARCH QUERY 'fast' LIMIT 0 0"
+    },
+    {
+      "id": "1696801235546",
+      "type": "redis",
+      "content": "FT.PROFILE idx:cars SEARCH QUERY '%%fast%%' LIMIT 0 0"
+    }
+  ],
+  "createdAt": "2023-10-08T21:39:15.297Z"
+}
