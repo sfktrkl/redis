@@ -1,0 +1,38 @@
+{
+  "id": "8ced6d",
+  "fileName": "4 - Text queries.json",
+  "name": "4 - Text queries",
+  "cells": [
+    {
+      "id": "7f76c3",
+      "type": "redis",
+      "content": "HSET cars#a1 name 'fast car' color red year 1950\nHSET cars#b1 name 'just car' color red year 1960\nHSET cars#c1 name 'old car' color blue year 1970\nHSET cars#d1 name 'new car' color blue year 1990\nFT.CREATE idx:cars ON HASH PREFIX 1 cars#\n    SCHEMA name TEXT year NUMERIC color TAG"
+    },
+    {
+      "id": "1696796412910",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(fast)'"
+    },
+    {
+      "id": "1696796505363",
+      "type": "redis",
+      "content": "// In addition to filtering the stop words,\n// stemming will be applied to reduce words to a base form\nFT.SEARCH idx:cars '@name:(fastly)'"
+    },
+    {
+      "id": "1696796635019",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(fast car)'"
+    },
+    {
+      "id": "1696796642801",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(fast|car)'"
+    },
+    {
+      "id": "1696796605338",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '-@name:(fast)'"
+    }
+  ],
+  "createdAt": "2023-10-08T20:19:52.348Z"
+}
