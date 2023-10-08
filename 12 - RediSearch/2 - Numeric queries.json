@@ -1,0 +1,33 @@
+{
+  "id": "83e0e0",
+  "fileName": "2 - Numeric queries.json",
+  "name": "2 - Numeric queries",
+  "cells": [
+    {
+      "id": "3ef5a8",
+      "type": "redis",
+      "content": "HSET cars#a1 name 'fast' color red year 1950\nHSET cars#b1 name 'just' color red year 1960\nHSET cars#c1 name 'old' color blue year 1970\nHSET cars#d1 name 'new' color blue year 1990\nFT.CREATE idx:cars ON HASH PREFIX 1 cars#\n    SCHEMA name TEXT year NUMERIC color TAG"
+    },
+    {
+      "id": "1696796107918",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@year:[1955 1970]'"
+    },
+    {
+      "id": "1696796121928",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@year:[1955 (1970]'"
+    },
+    {
+      "id": "1696796127301",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@year:[1955 +inf]'"
+    },
+    {
+      "id": "1696796132473",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '-@year:[1955 1970]'"
+    }
+  ],
+  "createdAt": "2023-10-08T20:12:32.534Z"
+}
