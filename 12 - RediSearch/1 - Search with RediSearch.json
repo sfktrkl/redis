@@ -1,0 +1,33 @@
+{
+  "id": "a4f2a8",
+  "fileName": "1 - Search with RediSearch.json",
+  "name": "1 - Search with RediSearch",
+  "cells": [
+    {
+      "id": "55abc7",
+      "type": "redis",
+      "content": "HSET cars#a1 name 'fast' color red year 1950\nHSET cars#b1 name 'just' color red year 1960\nHSET cars#c1 name 'old' color blue year 1970\nHSET cars#d1 name 'new' color blue year 1990"
+    },
+    {
+      "id": "1696794989995",
+      "type": "redis",
+      "content": "FT.CREATE idx:cars ON HASH PREFIX 1 cars#\n    SCHEMA name TEXT year NUMERIC color TAG"
+    },
+    {
+      "id": "1696795069697",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@name:(fast)'"
+    },
+    {
+      "id": "1696795139247",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@color:{blue}'"
+    },
+    {
+      "id": "1696795175379",
+      "type": "redis",
+      "content": "FT.SEARCH idx:cars '@year:[1955 1980]'"
+    }
+  ],
+  "createdAt": "2023-10-08T19:54:39.007Z"
+}
