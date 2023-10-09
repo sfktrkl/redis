@@ -1,0 +1,33 @@
+{
+  "id": "8161db",
+  "fileName": "1 - Adding and reading messages.json",
+  "name": "1 - Adding and reading messages",
+  "cells": [
+    {
+      "id": "aa2b0c",
+      "type": "redis",
+      "content": "DEL fruits\r\n// Dont specify an ID, let redis to it with `*`\r\nXADD fruits 10-0 color red name strawberry"
+    },
+    {
+      "id": "1696809831206",
+      "type": "redis",
+      "content": "XREAD STREAMS fruits 0-0"
+    },
+    {
+      "id": "1696809947987",
+      "type": "redis",
+      "content": "XADD fruits 11-0 color yellow name banana"
+    },
+    {
+      "id": "1696809920907",
+      "type": "redis",
+      "content": "XREAD STREAMS fruits 0-0"
+    },
+    {
+      "id": "1696809960202",
+      "type": "redis",
+      "content": "XREAD COUNT 2 STREAMS fruits 0-0"
+    }
+  ],
+  "createdAt": "2023-10-09T00:03:17.998Z"
+}
