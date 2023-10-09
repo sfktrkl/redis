@@ -1,0 +1,28 @@
+{
+  "id": "96eb88",
+  "fileName": "2 - Blocking reads.json",
+  "name": "2 - Blocking reads",
+  "cells": [
+    {
+      "id": "d59090",
+      "type": "redis",
+      "content": "DEL fruits\r\nXREAD BLOCK 3000 STREAMS fruits 10-0"
+    },
+    {
+      "id": "1696810298171",
+      "type": "redis",
+      "content": "XREAD COUNT 5 BLOCK 3000 STREAMS fruits 10-0"
+    },
+    {
+      "id": "1696810403966",
+      "type": "redis",
+      "content": "XREAD COUNT 5 BLOCK 3000 STREAMS fruits $"
+    },
+    {
+      "id": "1696810228245",
+      "type": "redis",
+      "content": "XADD fruits 20-0 color red name apple"
+    }
+  ],
+  "createdAt": "2023-10-09T00:09:08.084Z"
+}
