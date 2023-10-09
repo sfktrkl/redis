@@ -1,0 +1,38 @@
+{
+  "id": "6c9587",
+  "fileName": "3 - Reading range of messages.json",
+  "name": "3 - Reading range of messages",
+  "cells": [
+    {
+      "id": "d88368",
+      "type": "redis",
+      "content": "DEL fruits\r\nXADD fruits 30-0 color red name apple"
+    },
+    {
+      "id": "1696810757556",
+      "type": "redis",
+      "content": "XRANGE fruits 30-0 31-0"
+    },
+    {
+      "id": "1696810793880",
+      "type": "redis",
+      "content": "XRANGE fruits (30-0 31-0"
+    },
+    {
+      "id": "1696810832537",
+      "type": "redis",
+      "content": "XRANGE fruits 30-0 +"
+    },
+    {
+      "id": "1696810855216",
+      "type": "redis",
+      "content": "XRANGE fruits - (31-0"
+    },
+    {
+      "id": "1696810888090",
+      "type": "redis",
+      "content": "XRANGE fruits - (31-0 COUNT 2"
+    }
+  ],
+  "createdAt": "2023-10-09T00:18:13.737Z"
+}
