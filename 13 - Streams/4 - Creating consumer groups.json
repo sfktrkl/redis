@@ -1,0 +1,28 @@
+{
+  "id": "98e78e",
+  "fileName": "4 - Creating consumer groups.json",
+  "name": "4 - Creating consumer groups",
+  "cells": [
+    {
+      "id": "ac304d",
+      "type": "redis",
+      "content": "DEL fruits\r\nXGROUP CREATE fruits fruits-group $ MKSTREAM"
+    },
+    {
+      "id": "1696811403498",
+      "type": "redis",
+      "content": "XGROUP CREATECONSUMER fruits fruits-group worker-1\r\nXGROUP CREATECONSUMER fruits fruits-group worker-2"
+    },
+    {
+      "id": "1696811445091",
+      "type": "redis",
+      "content": "XINFO GROUPS fruits"
+    },
+    {
+      "id": "1696811458575",
+      "type": "redis",
+      "content": "XINFO CONSUMERS fruits fruits-group"
+    }
+  ],
+  "createdAt": "2023-10-09T00:28:01.862Z"
+}
