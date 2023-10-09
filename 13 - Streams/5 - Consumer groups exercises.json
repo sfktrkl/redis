@@ -1,0 +1,53 @@
+{
+  "id": "99daa4",
+  "fileName": "5 - Consumer groups exercises.json",
+  "name": "5 - Consumer groups exercises",
+  "cells": [
+    {
+      "id": "aee8ba",
+      "type": "redis",
+      "content": "DEL fruits\r\nXGROUP CREATE fruits fruits-group $ MKSTREAM\r\nXGROUP CREATECONSUMER fruits fruits-group worker-1\r\nXGROUP CREATECONSUMER fruits fruits-group worker-2"
+    },
+    {
+      "id": "1696812158552",
+      "type": "redis",
+      "content": "XADD fruits 50-0 color red name apple\r\nXADD fruits 51-0 color yellow name banana\r\nXADD fruits 52-0 color orange name orange"
+    },
+    {
+      "id": "1696812166440",
+      "type": "redis",
+      "content": "XREADGROUP GROUP fruits-group worker-1 COUNT 1 STREAMS fruits >"
+    },
+    {
+      "id": "1696812207112",
+      "type": "redis",
+      "content": "XREADGROUP GROUP fruits-group worker-2 COUNT 1 STREAMS fruits >"
+    },
+    {
+      "id": "1696812399602",
+      "type": "redis",
+      "content": "XINFO CONSUMERS fruits fruits-group"
+    },
+    {
+      "id": "1696812415017",
+      "type": "redis",
+      "content": "XACK fruits fruits-group 50-0"
+    },
+    {
+      "id": "1696812429940",
+      "type": "redis",
+      "content": "XINFO CONSUMERS fruits fruits-group"
+    },
+    {
+      "id": "1696812513301",
+      "type": "redis",
+      "content": "XAUTOCLAIM fruits fruits-group worker-1 100 0-0"
+    },
+    {
+      "id": "1696812541007",
+      "type": "redis",
+      "content": "XINFO CONSUMERS fruits fruits-group"
+    }
+  ],
+  "createdAt": "2023-10-09T00:42:06.664Z"
+}
